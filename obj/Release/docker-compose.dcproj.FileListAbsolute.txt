@@ -1,0 +1,2 @@
+D:\GrowArchive\3_curs\volga\VolgaIT\obj\Release\docker-compose.dcproj.CoreCompileInputs.cache
+D:\GrowArchive\3_curs\volga\testers\VolgaIT\obj\Release\docker-compose.dcproj.CoreCompileInputs.cache

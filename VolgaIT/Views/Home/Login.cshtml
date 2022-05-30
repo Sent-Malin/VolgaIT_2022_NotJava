@@ -1,0 +1,43 @@
+﻿@model VolgaIT.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet8.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="allblock">
+            <div class="menu">
+                <p class="cont">@Html.ActionLink("На главную", "GrandPage")</p>
+                <p class="cont">@Html.ActionLink("Авторизация", "Login")</p>
+                <p class="cont">@Html.ActionLink("Регистрация", "Registration")</p>
+                @if (Model.Email.Length > 5)
+                {
+                    <p class="cont">@Html.ActionLink("Список приложений", "ListApplication")</p>
+                    <p class="cont">@Html.ActionLink("Добавление приложения", "AddApplication")</p>
+                    <p class="cont">@Html.ActionLink("Выйти", "Exit")</p>
+                }
+            </div>
+            <div style="width: 30%;margin-top: 10px;">
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
+                    <p>Введите email: </p>
+                    @Html.TextBox("Email", "", new { type = "email" })
+                    <p>Введите пароль :</p>
+                    @Html.TextBox("Password", "", new { type = "password" })
+                    <p><input type="submit" value="Зайти" /></p>
+                    @ViewBag.ErrorMessage
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: D:\GrowArchive\3_curs\volga\testers\VolgaIT
+      dockerfile: ./Dockerfile
+    depends_on:
+      postgres:
+        condition: service_started
+    ports:
+    - published: 8085
+      target: 80
+  postgres:
+    environment:
+      POSTGRES_PASSWORD: '1234567'
+      POSTGRES_USER: postgres
+    image: postgres:10.7
+    ports:
+    - published: 5436
+      target: 5432
+    restart: always
+version: '3.4'

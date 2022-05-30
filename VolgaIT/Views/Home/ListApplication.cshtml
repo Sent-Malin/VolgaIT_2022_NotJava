@@ -1,0 +1,39 @@
+﻿@model List<VolgaIT.Models.Application>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet8.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="allblock">
+            <div class="menu">
+                <p class="cont">@Html.ActionLink("На главную", "GrandPage")</p>
+                <p class="cont">@Html.ActionLink("Авторизация", "Login")</p>
+                <p class="cont">@Html.ActionLink("Регистрация", "Registration")</p>
+                <p class="cont">@Html.ActionLink("Список приложений", "ListApplication")</p>
+                <p class="cont">@Html.ActionLink("Добавление приложения", "AddApplication")</p>
+                <p class="cont">@Html.ActionLink("Выйти", "Exit")</p>
+            </div>
+            <div style=" width: 40%; text-align:center; font-size: 25px;">
+                @foreach (var item in Model)
+                {
+                <div style="justify-content: space-between; display: flex;">
+                    <div>@Html.ActionLink(item.Name, "ShowStat", new { appId = item.Id })</div>
+                    <div>@Html.ActionLink("Send request", "SendRequest", new { appId = item.Id })</div>
+                    <div>@Html.ActionLink("getImage", "GetImage", new { appId = item.Id })</div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

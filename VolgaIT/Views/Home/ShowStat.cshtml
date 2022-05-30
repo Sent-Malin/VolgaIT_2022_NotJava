@@ -1,0 +1,93 @@
+﻿@model List<VolgaIT.Models.User_requests>
+@using System.Text
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet8.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="allblock">
+            <div class="menu">
+                <p class="cont">@Html.ActionLink("На главную", "GrandPage")</p>
+                <p class="cont">@Html.ActionLink("Авторизация", "Login")</p>
+                <p class="cont">@Html.ActionLink("Регистрация", "Registration")</p>
+                <p class="cont">@Html.ActionLink("Список приложений", "ListApplication")</p>
+                <p class="cont">@Html.ActionLink("Добавление приложения", "AddApplication")</p>
+                <p class="cont">@Html.ActionLink("Выйти", "Exit")</p>
+            </div>
+            <div style="width: 60%;">
+                <div style="display: flex;">
+                    <div style="width:300px">
+                        <input type="hidden" id="requests" data-set='{"getInfo": @ViewBag.DiaData[0],
+                       "getImage": @ViewBag.DiaData[1],"postJSON": @ViewBag.DiaData[2],"postText": @ViewBag.DiaData[3]}' />
+                        <canvas id="myCanvas"></canvas>
+                        <script type="text/javascript" src="~/Content/script.js"></script>
+                    </div>
+                    <div style="width: 40%; margin-left: 2%;">
+                        <div style="display: flex; height: 10%; width: 100px; vertical-align: initial;">
+                            <div style="width: 10px; height: 10px; background-color: #7D1E6A; margin-top: 11%"></div><div style="margin-top: 5%;margin-left: 5%;">getInfo</div>
+                        </div>
+                        <div style="display: flex; height: 10%; width: 100px; vertical-align: initial;">
+                            <div style="width: 10px; height: 10px; background-color: #EEB0B0; margin-top: 11%"></div><div style="margin-top: 5%;margin-left: 5%;">getImage</div>
+                        </div>
+                        <div style="display: flex; height: 10%; width: 100px; vertical-align: initial;">
+                            <div style="width: 10px; height: 10px; background-color: #FFE59D; margin-top: 11%"></div><div style="margin-top: 5%;margin-left: 5%;">postJSON</div>
+                        </div>
+                        <div style="display: flex; height: 10%; width: 100px; vertical-align: initial;">
+                            <div style="width: 10px; height: 10px; background-color: #BDE6F1; margin-top: 11%"></div><div style="margin-top: 5%;margin-left: 5%;">postText</div>
+                        </div>
+                            @Html.ActionLink("Запросы за неделю", "ShowStatRule", new { status = "week", appId = ViewBag.Application})
+                            @Html.ActionLink("Запросы за месяц", "ShowStatRule", new { status = "month", appId = ViewBag.Application })
+                            @Html.ActionLink("Запросы за год", "ShowStatRule", new { status = "year", appId = ViewBag.Application })
+                        </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Date_request)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Extra_data)
+                            </th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date_request)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Extra_data)
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <div style="font-size: 25px;">@Html.ActionLink("Back", "ListApplication")</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

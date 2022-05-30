@@ -1,0 +1,17 @@
+﻿@model int
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="~/Content/StyleSheet8.css">
+    <title>Login</title>
+</head>
+<body>
+    @if (ViewBag.Check == "Check")
+    {
+        <img style="margin:auto; align-items:center;" src="~/Content/images/cvety2.jpg">
+    }
+    <div style="font-size: 25px; margin: auto; align-items: center;">@Html.ActionLink("Back", "SendRequest", new { appId = Model})</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿insert into users(email, password) 
+values ('dimalov@yandex.ru', '0001'),
+       ('phoenix198@mail.ru', '8450'),
+       ('fansGol@mail.ru', 'g012'),
+       ('tetrise77@gmail.ru', '398s'),
+       ('universion@yandex.ru', '3801x'),
+       ('teachOr@mail.ru', 'zneeko'),
+       ('studerr@yandex.ru', 'qwerty');
+
+insert into applications(name, date_create, user_id)
+values ('Bicycle monitor','2021-04-10',1),
+       ('Security report','2022-01-22',2),
+       ('Virus researches','2022-02-22',3),
+       ('Crocodile attack statistics','2022-05-28',4),
+       ('My favorite icecream','2021-05-05',5),
+       ('Handbook of fish care','2022-01-26',6),
+       ('Manual winter hunters','2022-02-20',7),
+       ('First aid manual','2022-04-20',7),
+       ('Rainfall monitoring in Ulyanovsk','2022-03-03',3),
+       ('Good news','2021-05-11',4);
+
+insert into user_requests(application_id, name, date_request, extra_data)
+values (1,'getInfo','2021-06-12','{"first_name": "Jeanette","last_name": "Penddreth","email": "jpenddreth0@census.gov","ip_address": "26.58.193.2"}'),
+       (1,'getInfo','2021-06-02','{"name": "Molecule Man","age": 29,"secretIdentity": "Dan Jukes","powers": ["Radiation resistance","Turning tiny","Radiation blast"]}'),
+       (1,'getInfo','2021-06-16','{"name": "Madame Uppercut","age": 39,"secretIdentity": "Jane Wilson","powers": ["Million tonne punch","Damage resistance","Superhuman reflexes"]}'),
+       (1,'getImage','2022-01-27','flowers'),
+       (1,'getImage','2022-01-27','flowers'),
+       (1,'getImage','2022-01-28','flowers'),
+       (1,'getImage','2022-01-28','flowers'),
+       (1,'getImage','2022-01-27','flowers'),
+       (1,'postText','2022-02-25','В эту минуту хозяин вошел с кипящим самоваром;'),
+       (1,'postText','2022-02-25','Кучеру Селифану отдано было приказание рано поутру заложить лошадей;'),
+       (1,'postText','2022-05-04','Для читателя будет не лишним познакомиться с сими двумя крепостными людьми нашего героя;'),
+       (1,'postText','2022-05-02','Петрушка ходил в несколько широком коричневом сюртуке с барского плеча; '),
+       (1,'postText','2022-05-12','Это чтение совершалось более в лежачем положении в передней; '),
+       (1,'postText','2022-05-10','Кроме страсти к чтению, он имел еще два обыкновения, составлявшие две другие его характерические черты; '),
+       (1,'postText','2022-05-20','Чичиков, будучи человек весьма щекотливый и даже в некоторых случаях привередливый; '),
+       (1,'postJSON','2022-05-21','{"name": "Eternal Flame","age": 1000000,"secretIdentity": "Unknown","powers": ["Immortality","Heat Immunity","Inferno","Teleportation","Interdimensional travel"]}'),
+       (1,'postJSON','2022-05-22','{"colors": [{"color": "black","category": "hue","type": "primary","code": {"rgba": [255,255,255,1],"hex": "#000"}}}'),
+       (2,'getImage','2022-01-27','flowers'),
+       (3,'postText','2022-02-25','Поехали отыскивать Маниловку. Проехавши две версты, встретили поворот; '),
+       (4,'postJSON','2022-05-29','{"first_name" : "Sammy","last_name" : "Shark","location" : "Ocean","online" : true,"followers" : 987}'),
+       (5,'getImage','2021-05-07','flowers'),
+       (6,'postJSON','2022-01-30','{"colors": [{"color": "black","category": "hue","type": "primary","code": {"rgba": [255,255,255,1],"hex": "#000"}}}'),
+       (7,'getImage','2022-02-25','flowers'),
+       (8,'postText','2022-04-24','В одну минуту дорогу занесло; окрестность исчезла'),
+       (9,'postJSON','2022-05-03','{"colors": [{"color": "black","category": "hue","type": "primary","code": {"rgba": [255,255,255,1],"hex": "#000"}}}'),
+       (10,'getInfo','2021-05-15','{"first_name": "Noell","last_name": "Bea","email": "nbea2@imageshack.us","ip_address": "180.66.162.255"}');
